@@ -2,8 +2,5 @@
 
 php_version: '7.4'
 
-# https://repo.mysql.com/mysql-community-release-el7-1.noarch.rpm  ==> 7-1
-# https://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm  ==> 7-5 
-# https://repo.mysql.com/mysql-community-release-el7-7.noarch.rpm  ==> 7-7
-# https://repo.mysql.com/mysql-community-release-el7.rpm
-mysql_version: '7-7'
+mysql_version-number: 5
+# mysql_version-number: 3
