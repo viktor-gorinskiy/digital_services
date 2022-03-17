@@ -1,0 +1,14 @@
+---
+# tasks file for roles/test_task
+- name: "Create {{ web_root }} directory"
+  file:
+    path: "{{ web_root }}"
+    state: directory
+
+- name: "Copy source code to {{ web_root }} dir"
+  copy:
+    src: "files/index.php"
+    dest: "{{ web_root }}"
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_user }}"
+    mode: 0644

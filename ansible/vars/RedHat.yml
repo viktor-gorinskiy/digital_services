@@ -1,0 +1,4 @@
+nginx_user: nginx
+
+# Used only for Redhat installation, enables source Nginx repo.
+nginx_yum_repo_enabled: true

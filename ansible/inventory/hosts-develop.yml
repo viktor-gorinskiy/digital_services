@@ -1,0 +1,20 @@
+---
+all:
+  vars:
+    become: yes
+    become_method: 
+    ansible_become_password:
+    
+    
+project:
+  hosts:
+    develop:
+      ansible_host: 10.4.100.129
+      ansible_user: sadmin
+      become_method: 
+      ansible_become_password: 
+    
+    main:
+      ansible_host:
+      ansible_user: ec2-user
+      ansible_python_interpreter: /usr/bin/python2
