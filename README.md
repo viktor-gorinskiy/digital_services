@@ -1,21 +1,11 @@
 
 # Тестовое задание для Цифровые сервисы
-<style>
-   .leftimg {
-    float:left; /* Выравнивание по левому краю */
-    margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
-   }
-   .rightimg  {
-    float: right; /* Выравнивание по правому краю  */ 
-    margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
-   }
-</style>
-<div class="center">
-<img src="https://hhcdn.ru/employer-logo/3940524.jpeg" alt="logo" class="leftimg" width="80" height="80" >  
-<br>
 
-
-Этот репозиторий является результатом выполнения моего тестового задания, для компании <a href="https://myservices.digital/">Цифровые сервисы</a>
+<div class="warning" style='background-color:#EDF2F7; color:#1A2067; border-left: solid #718096 px; border-radius: 4px;'>
+<p style='padding:0.7em; margin-left:0.7em; display: inline-block;'>
+<img src="https://hhcdn.ru/employer-logo/3940524.jpeg" style="zoom:50%;  float:left; padding:0.7em"/><br>
+Этот репозиторий является результатом выполнения моего тестового задания, для компании <a href="https://myservices.digital/">Цифровые сервисы.</a><br>
+</p>
 </div>
 
 ## Реализовано:
