@@ -1,12 +1,14 @@
 
 # Тестовое задание для Цифровые сервисы
 
-<div class="warning" style='background-color:#EDF2F7; color:#1A2067; border-left: solid #718096 px; border-radius: 4px;'>
-<p style='padding:0.7em; margin-left:0.7em; display: inline-block;'>
-<img src="https://hhcdn.ru/employer-logo/3940524.jpeg" style="zoom:50%;  float:left; padding:0.7em"/><br>
-Этот репозиторий является результатом выполнения моего тестового задания, для компании <a href="https://myservices.digital/">Цифровые сервисы.</a><br>
-</p>
-</div>
+
+
+
+<img align="left" width="80" height="80" src="https://hhcdn.ru/employer-logo/3940524.jpeg">
+
+Этот репозиторий является результатом выполнения моего тестового задания, для компании <a href="https://myservices.digital/">Цифровые сервисы.</a>  
+<br>
+
 
 ## Реализовано:
 * Автоматическое определение операционной системы
