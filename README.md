@@ -24,7 +24,9 @@
 
 #### Фaйл inventory
 Фаил ```inventory``` сформирован для удобного запуска через ```gitlab-ci.yml```, в этом случае, параметр ```-i``` будет совпадать с именем ветки в гите:
-```- ansible-playbook -i ansible/inventory/hosts-develop.yml ansible/playbook_name.yml -l $target```
+```
+- ansible-playbook -i ansible/inventory/hosts-develop.yml ansible/playbook_name.yml -l $target
+```
 В этом же файле можно задать специфичные для сервера переменные.  
 Конечнно все эти переменные можно переопеделить согласно иерархии переменных в ansible
 
