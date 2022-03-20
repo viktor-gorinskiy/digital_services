@@ -1,0 +1,50 @@
+---
+- name: Update apt-get repo and cache
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install gnupg
+  apt:
+    name: gnupg
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install mysql-apt-config
+  apt:
+    deb: https://dev.mysql.com/get/mysql-apt-config_{{ mysql_version_number }}_all.deb
+  when: ansible_os_family == "Debian"
+
+- name: Add an apt key by id from a keyserver
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 467B942D3A79BD29
+  when: ansible_os_family == "Debian"
+
+- name: Update apt-get repo and cache
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+  when: ansible_os_family == "Debian"
+
+- name: install mysql-apt-config
+  apt:
+    deb: "{{ item }}"
+  with_fileglob:
+    - /tmp/mysql-apt-config_{{ mysql_version_number }}_all.deb
+  when: ansible_os_family == "Debian"
+
+# apt update
+# apt -y install gnupg
+# wget https://dev.mysql.com/get/mysql-apt-config_0.8.20-1_all.deb
+
+# dpkg -i mysql-apt-config_0.8.20-1_all.deb 
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
+# apt update &&  apt upgrade -y
+
+# deb http://repo.mysql.com/apt/debian/ buster mysql-apt-config
+# deb http://repo.mysql.com/apt/debian/ buster mysql-cluster-7.5
+# deb http://repo.mysql.com/apt/debian/ buster mysql-tools
+# #deb http://repo.mysql.com/apt/debian/ buster mysql-tools-preview
+# deb-src http://repo.mysql.com/apt/debian/ buster mysql-cluster-7.5

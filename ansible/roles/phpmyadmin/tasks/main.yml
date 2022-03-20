@@ -1,8 +1,43 @@
 ---
-# tasks file for roles/phpmyadmin
+    
+- name: Install unzip
+  apt:
+    name: unzip
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Unarchive a file that needs to be downloaded (added in 2.0)
+  unarchive:
+    src: "https://files.phpmyadmin.net/phpMyAdmin/{{ phpMyAdmin_version }}/phpMyAdmin-{{ phpMyAdmin_version }}-all-languages.zip"
+    dest: "/tmp/"
+    remote_src: yes
+
+- name: Delete path {{ phpMyAdmin_src }}
+  file:
+    state: absent
+    path: "{{ phpMyAdmin_src }}"
+
+- name: Move phpMyAdmin
+  command: "mv /tmp/phpMyAdmin-{{ phpMyAdmin_version }}-all-languages {{ phpMyAdmin_src }}"
+
+
+- name: Copy example config
+  command: "cp {{ phpMyAdmin_src }}/config.sample.inc.php {{ phpMyAdmin_src }}/config.inc.php"
+
+- name: Set owner
+  file:
+    # state: directory
+    recurse: yes
+    path: "{{ phpMyAdmin_src }}"
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_user }}"
+    # mode: 0644
+
+
 - name: "Create Symlink to the phpMyAdmin dir"
   file:
     src: "{{ phpMyAdmin_src }}"
     dest: "{{ phpMyAdmin_dest }}/phpMyAdmin"
     state: link
     force: yes
+

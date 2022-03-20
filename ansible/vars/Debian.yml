@@ -7,3 +7,5 @@ nginx_default_release: ""
 nginx_ppa_use: false
 
 nginx_ppa_version: stable
+php_install_recommends: false
+

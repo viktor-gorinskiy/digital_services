@@ -1,13 +1,4 @@
 ---
-# tasks file for roles/install_mysql_versions
-- name: Install the MySQL repo.
-  yum:
-    # name: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-    name: https://repo.mysql.com/mysql-community-release-el{{ mysql_version }}.noarch.rpm
-
-    state: present
-  when: ansible_os_family == "RedHat"
-
 - name: Override variables for MySQL (RedHat).
   set_fact:
     mysql_daemon: mysqld

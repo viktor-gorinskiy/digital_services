@@ -1,4 +1,12 @@
 ---
+- name: DEBUG install_php 1!!!!!!!!!!!!!!!!!!!!!!!!!!
+  debug:
+    msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
+
+- name: DEBUG install_php 2!!!!!!!!!!!!!!!!!!!!!!!!!!
+  debug:
+    msg: "php_mysql_package {{ php_mysql_package }}"
+
 - name: Update apt cache.
   apt: update_cache=yes cache_valid_time=86400
 

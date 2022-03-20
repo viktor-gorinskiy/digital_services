@@ -1,10 +1,10 @@
 ---
+domain: "test-job"
+server_name: "{{ domain }}.lan"
 
+web_root: "/var/www/{{ server_name }}"
 
-domain: "centos7-starter"
-web_root: "/var/www/{{ domain }}"
-
-phpMyAdmin_src: /usr/share/phpMyAdmin
+phpMyAdmin_src: /usr/share/phpmyadmin
 phpMyAdmin_dest: /usr/share/nginx/html
 
 firewall_allowed_tcp_ports:
@@ -16,11 +16,11 @@ nginx_remove_default_vhost: true
 
 nginx_vhosts:
   - listen: "80"
-    server_name: "{{ domain }}"
+    server_name: "{{ server_name }}"
     root: "{{ web_root }}"
     index: "index.php index.html index.htm"
     state: "present"
-    filename: "{{ domain }}.conf"
+    filename: "{{ server_name }}.conf"
     extra_parameters: |
         location ~ \.php$ {
             include fastcgi_params;
@@ -51,9 +51,9 @@ nginx_multi_accept: "off"
 
 mysql_root_password: "Aiyeejoo4yu6boo1chohj3que9shei_root"
 mysql_databases:
-  - name: "test_job_database"
+  - name: "name_db"
 mysql_users:
-  - name: "test_job_user"
+  - name: "name_user_db"
     password: "Aiyeejoo4yu6boo1chohj3que9shei_user"
     priv: "appDbName.*:ALL"
 
@@ -87,4 +87,3 @@ php_packages:
   - php-apcu
   - php-pecl-apcu
   - php-redis
-  - phpmyadmin

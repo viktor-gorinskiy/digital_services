@@ -1,16 +1,15 @@
 ---
 all:
   vars:
-    become_method: 
     ansible_become_password:
     
 project:
   hosts:
     develop:
-      ansible_host: 10.4.100.129
+      ansible_host: 192.168.122.121
       ansible_user: sadmin
-      become_method: 
-      ansible_become_password: 
+      ansible_become_password: WebAdmin_7722
+      ansible_python_interpreter: /usr/bin/python3
     
     main:
       ansible_host:
