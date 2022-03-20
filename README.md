@@ -18,6 +18,10 @@
   * mysql (debian - реализовано)
   * redis (в процессе )
 
+##### URLs для проверки:
+* http://test-job.lan/
+* http://test-job.lan/phpMyAdmin/
+
 
 ## Описание:
 В папке ansible находится всё необходимое для запуска.
