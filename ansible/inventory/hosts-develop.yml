@@ -15,3 +15,4 @@ project:
     main:
       ansible_host: 10.4.100.129
       ansible_user: sadmin
+      ansible_python_interpreter: /usr/bin/python2
