@@ -1,0 +1,24 @@
+---
+# tasks file for install_repo-mysql
+
+- name: Update apt-get repo and cache
+  apt:
+    upgrade: "yes"
+    update_cache: yes
+    # cache_valid_time: 432000
+
+- name: Install gnupg
+  apt:
+    name: gnupg
+    update_cache: yes
+
+- name: Create sources list mysql {{ mysql_version }}
+  template:
+    src="{{ ansible_os_family }}_{{ mysql_version.split(".")[0]}}.j2"
+    dest=/etc/apt/sources.list.d/mysql.list
+
+- name: Add an apt key by id from a keyserver
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 467B942D3A79BD29
+
