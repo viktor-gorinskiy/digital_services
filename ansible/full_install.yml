@@ -10,17 +10,17 @@
     - [ "vars/{{ ansible_os_family }}.yml"]
 
   roles:
-  # - { role: install_repo-epel, when: ansible_os_family == 'RedHat' }
-  # - { role: install_repo-remi, when: ansible_os_family == 'RedHat' }
-  # - { role: firewall, when: ansible_os_family == 'RedHat' }
-  # - install_nginx
-  # - install_php_versions
-  # - install_php
-  # - install_php_mysql
+  - { role: install_repo-epel, when: ansible_os_family == 'RedHat' }
+  - { role: install_repo-remi, when: ansible_os_family == 'RedHat' }
+  - { role: firewall, when: ansible_os_family == 'RedHat' }
+  - install_nginx
+  - install_php_versions
+  - install_php
+  - install_php_mysql
 
-  # - install_repo-mysql
-  # - install_mysql
-  # - install_redis
-  # - test_task
+  - install_repo-mysql
+  - install_mysql
+  - install_redis
+  - test_task
   - phpmyadmin
   
