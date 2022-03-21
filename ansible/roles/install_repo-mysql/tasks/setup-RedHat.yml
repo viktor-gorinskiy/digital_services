@@ -1,2 +1,12 @@
 ---
 # tasks file for install_repo-mysql
+
+# - name: install repo  mysql {{ mysql_version.replace('.', '-') }}
+#   yum:
+#     name: https://dev.mysql.com/get/mysql80-community-release-el{{ mysql_version.replace('.', '-') }}.noarch.rpm
+    # state: present
+
+
+# yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-3.noarch.rpm
+# yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-5.noarch.rpm
+# yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
