@@ -6,6 +6,13 @@
     update_cache: yes
   when: ansible_os_family == "Debian"
 
+- name: Install unzip
+  yum:
+    name: unzip
+    update_cache: yes
+  when: ansible_os_family == "RedHat"
+  
+
 - name: Unarchive a file that needs to be downloaded (added in 2.0)
   unarchive:
     src: "https://files.phpmyadmin.net/phpMyAdmin/{{ phpMyAdmin_version }}/phpMyAdmin-{{ phpMyAdmin_version }}-all-languages.zip"
